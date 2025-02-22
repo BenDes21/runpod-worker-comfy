@@ -81,6 +81,7 @@ RUN if [ "$MODEL_TYPE" = "sdxl" ]; then \
     elif [ "$MODEL_TYPE" = "flux1-dev" ]; then \
       wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/unet/jibMixFlux_v8Accentueight.safetensors https://huggingface.co/Jehex/Jibv8/blob/main/jibMixFlux_v8Accentueight.safetensors && \
       wget -O models/clip/ViT-L-14-GmP-SAE-FULL-model.safetensors https://huggingface.co/Jehex/Jibv8/blob/main/ViT-L-14-GmP-SAE-FULL-model.safetensors && \
+      wget -O models/loras/NatchaSaetang_flux2_V1_000004500.safetensors https://huggingface.co/Jehex/Jibv8/blob/main/NatchaSaetang_flux2_V1_000004500.safetensors && \
       wget -O models/clip/t5xxl_fp8_e4m3fn_scaled.safetensors https://huggingface.co/Jehex/Jibv8/blob/main/t5xxl_fp8_e4m3fn_scaled.safetensors && \
       wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/vae/ae.safetensors https://huggingface.co/Jehex/Jibv8/blob/main/ae.safetensors; \
     fi
