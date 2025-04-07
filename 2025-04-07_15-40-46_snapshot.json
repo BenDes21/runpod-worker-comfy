@@ -24,6 +24,9 @@
     },
     "cnr_custom_nodes": {
         "comfyui-detail-daemon": "1.1.2"
+        "comfyUI_essentials": "1.1.0"
+        "ComfyUI-TeaCache": "1.5.0"
+        "ComfyUI-post-processing-nodes": "1.0.1"
     },
     "file_custom_nodes": [
         {
