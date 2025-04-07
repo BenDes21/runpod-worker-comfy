@@ -1,38 +1,6 @@
 {
     "comfyui": "75c1c757d90ca891eff823893248ef8b51d31d01",
     "git_custom_nodes": {
-        "https://github.com/laksjdjf/cgem156-ComfyUI": {
-            "hash": "74b47c4068114bbd4f7121cf071b0fa126eb662e",
-            "disabled": false
-        },
-        "https://github.com/skfoo/ComfyUI-Coziness": {
-            "hash": "d841eaea9a560836682876a1c9a4dee087a130f3",
-            "disabled": false
-        },
-        "https://github.com/crystian/ComfyUI-Crystools": {
-            "hash": "0820a7560bcc405ef6d0a7c5c53a83cc02ae7db2",
-            "disabled": false
-        },
-        "https://github.com/city96/ComfyUI-GGUF": {
-            "hash": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
-            "disabled": false
-        },
-        "https://github.com/ltdrdata/ComfyUI-Impact-Pack": {
-            "hash": "0b1ac0f1c5a395e17065821e4fd47aba3bf23900",
-            "disabled": false
-        },
-        "https://github.com/ltdrdata/ComfyUI-Impact-Subpack": {
-            "hash": "74db20c95eca152a6d686c914edc0ef4e4762cb8",
-            "disabled": false
-        },
-        "https://github.com/ltdrdata/ComfyUI-Inspire-Pack": {
-            "hash": "e2d18c21ba028a58ca628d2169d7603b068314de",
-            "disabled": false
-        },
-        "https://github.com/godmt/ComfyUI-List-Utils": {
-            "hash": "94c370c3699e954fb9e00b52eada66dcc6c269f0",
-            "disabled": false
-        },
         "https://github.com/ltdrdata/ComfyUI-Manager": {
             "hash": "50fc1389b0184d93765aefbbc4186fcdac96bdf9",
             "disabled": false
@@ -40,35 +8,11 @@
         "https://github.com/EllangoK/ComfyUI-post-processing-nodes": {
             "hash": "c49a05254795403648f2c1774b6f5ea39f96e7d5",
             "disabled": false
-        },
-        "https://github.com/hben35096/ComfyUI-ReplenishNodes": {
-            "hash": "c9825a6708476efbe2a22a77d0ca5dc7a7fc1930",
-            "disabled": false
-        },
-        "https://github.com/liuqianhonga/ComfyUI-String-Helper": {
-            "hash": "5b42a83c7421d873dc0652a545a8cb13808de142",
-            "disabled": false
-        },
+        },      
         "https://github.com/welltop-cn/ComfyUI-TeaCache.git": {
             "hash": "274c5a5bceb28eabe511ccf16c68bf29060957f7",
             "disabled": false
-        },
-        "https://github.com/un-seen/comfyui-tensorops": {
-            "hash": "d34488e3079ecd10db2fe867c3a7af568115faed",
-            "disabled": false
-        },
-        "https://github.com/shiimizu/ComfyUI-TiledDiffusion": {
-            "hash": "a155b1bac39147381aeaa52b9be42e545626a44f",
-            "disabled": false
-        },
-        "https://github.com/jamesWalker55/comfyui-various": {
-            "hash": "5bd85aaf7616878471469c4ec7e11bbd0cef3bf2",
-            "disabled": false
-        },
-        "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes": {
-            "hash": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
-            "disabled": false
-        },
+        },       
         "https://github.com/gseth/ControlAltAI-Nodes": {
             "hash": "0560cda0b232c76c95af43994464f691963ebef7",
             "disabled": false
@@ -76,60 +20,10 @@
         "https://github.com/cubiq/ComfyUI_essentials": {
             "hash": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
             "disabled": true
-        },
-        "https://github.com/lodestone-rock/ComfyUI_FluxMod.git": {
-            "hash": "a258aba7af67dd794bd63bfa0a169a54662f124b",
-            "disabled": false
-        },
-        "https://github.com/storyicon/comfyui_segment_anything": {
-            "hash": "ab6395596399d5048639cdab7e44ec9fae857a93",
-            "disabled": false
-        },
-        "https://github.com/TinyTerra/ComfyUI_tinyterraNodes": {
-            "hash": "c669e6cff81ba44cce91c9eee3236c1a64725394",
-            "disabled": false
-        },
-        "https://github.com/M1kep/Comfy_KepListStuff": {
-            "hash": "97320545f9d40bc5c3f63c614c37fcbe88a7dc3d",
-            "disabled": false
-        },
-        "https://github.com/gorillaframeai/GF_nodes.git": {
-            "hash": "eb7b9323000b0ce3bdd4004eda5873fe3738bd5f",
-            "disabled": false
-        },
-        "https://github.com/LEv145/images-grid-comfy-plugin": {
-            "hash": "852db490ef93702e1c68fe9774bdf65aaa7d3574",
-            "disabled": false
-        },
-        "https://github.com/Extraltodeus/LoadLoraWithTags": {
-            "hash": "cfc28d70e362695b001854172013bf643e851313",
-            "disabled": false
-        },
-        "https://github.com/Bellzs/ComfyUI-LoRA-Assistant": {
-            "hash": "705b9a25c977b191b3cd2ee3cf0e2664220873f3",
-            "disabled": false
-        },
-        "https://github.com/liuqianhonga/ComfyUI-QHNodes": {
-            "hash": "77b73b5fecb1976238a2b1e6231e70eeb02642ad",
-            "disabled": false
-        }
+        },    
     },
     "cnr_custom_nodes": {
-        "bjornulf_custom_nodes": "1.0.0",
-        "comfyui-automaticcfg": "1.0.0",
-        "comfyui-custom-scripts": "1.2.3",
-        "comfyui-detail-daemon": "1.1.2",
-        "comfyui-dream-project": "5.1.2",
-        "comfyui-easy-use": "1.2.8",
-        "comfyui-florence2": "1.0.3",
-        "comfyui-image-saver": "1.4.0",
-        "comfyui-kjnodes": "1.0.8",
-        "comfyui-mango-random": "1.0.2",
-        "comfyui-yaresolutionselector": "1.2.0",
-        "comfyui_ultimatesdupscale": "1.1.2",
-        "efficiency-nodes-comfyui": "1.0.6",
-        "qq-nodes-comfyui": "1.0.1",
-        "rgthree-comfy": "1.0.0"
+        "comfyui-detail-daemon": "1.1.2"
     },
     "file_custom_nodes": [
         {
