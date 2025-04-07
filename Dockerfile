@@ -57,8 +57,8 @@ CMD ["/start.sh"]
 # Stage 2: Download models
 FROM base as downloader
 
-ARG HUGGINGFACE_ACCESS_TOKEN
-ARG MODEL_TYPE
+# FOR TEST ONLYYYYYYYYYYYYYYYYYYYYYYY
+ARG HUGGINGFACE_ACCESS_TOKEN="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"
 
 # Change working directory to ComfyUI
 WORKDIR /comfyui
