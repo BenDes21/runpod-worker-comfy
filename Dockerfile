@@ -57,8 +57,10 @@ CMD ["/start.sh"]
 # Stage 2: Download models
 FROM base as downloader
 
-# FOR TEST ONLYYYYYYYYYYYYYYYYYYYYYYY
+
+# Stage 2: TEST only
 ARG HUGGINGFACE_ACCESS_TOKEN="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"
+
 
 # Change working directory to ComfyUI
 WORKDIR /comfyui
@@ -66,14 +68,30 @@ WORKDIR /comfyui
 # Create necessary directories
 RUN mkdir -p models/checkpoints models/vae models/loras models/clip models/unet
 
-# Download checkpoints/vae/LoRA to include in image based on model type
+# Install again custom nodes 
+
+RUN comfy node install controlaltai-nodes \
+    comfyui-post-processing-nodes \
+    teacache \
+    comfyui_essentials \
+    comfyui-detail-daemon
+
+RUN comfy node enable controlaltai-nodes
+RUN comfy node enable comfyui-post-processing-nodes
+RUN comfy node enable teacache
+RUN comfy node enable comfyui_essentials
+RUN comfy node enable comfyui-detail-daemon
+
+
 # Flux Setup
+
 RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/unet/jibMixFlux_v8Accentueight.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/BEN_Merge_V8UV4.safetensors            
 RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/clip/ViT-L-14-GmP-SAE-FULL-model.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/ViT-L-14-GmP-SAE-FULL-model.safetensors 
 RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/clip/t5xxl_fp8_e4m3fn_scaled.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/t5xxl_fp8_e4m3fn_scaled.safetensors 
 RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/vae/ae.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/ae.safetensors 
 
 # Lora's
+
 RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/loras/alice-blanche.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/AliceBlanche_flux2_V1.safetensors
 RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/loras/anna-smirnov.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/AnnaSmirnov_flux2_V1_000004500.safetensors
 RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/loras/aria-kelly.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/AriaKelly_Lokr_v1_000004500.safetensors
