@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Prefer binary wheels over source distributions for faster pip installations
 ENV PIP_PREFER_BINARY=1
 # Ensures output from python is printed immediately to the terminal without buffering
-ENV PYTHONUNBUFFERED=1 
+ENV PYTHONUNBUFFERED=1
 # Speed up some cmake builds
 ENV CMAKE_BUILD_PARALLEL_LEVEL=8
 
@@ -51,6 +51,20 @@ ADD *snapshot*.json /
 # Restore the snapshot to install custom nodes
 RUN /restore_snapshot.sh
 
+# Install again custom nodes
+
+RUN comfy node install controlaltai-nodes \
+    comfyui-post-processing-nodes \
+    teacache \
+    comfyui_essentials \
+    comfyui-detail-daemon
+
+RUN comfy node enable controlaltai-nodes
+RUN comfy node enable comfyui-post-processing-nodes
+RUN comfy node enable teacache
+RUN comfy node enable comfyui_essentials
+RUN comfy node enable comfyui-detail-daemon
+
 # Start container
 CMD ["/start.sh"]
 
@@ -68,27 +82,13 @@ WORKDIR /comfyui
 # Create necessary directories
 RUN mkdir -p models/checkpoints models/vae models/loras models/clip models/unet
 
-# Install again custom nodes 
-
-RUN comfy node install controlaltai-nodes \
-    comfyui-post-processing-nodes \
-    teacache \
-    comfyui_essentials \
-    comfyui-detail-daemon
-
-RUN comfy node enable controlaltai-nodes
-RUN comfy node enable comfyui-post-processing-nodes
-RUN comfy node enable teacache
-RUN comfy node enable comfyui_essentials
-RUN comfy node enable comfyui-detail-daemon
-
 
 # Flux Setup
 
-RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/unet/jibMixFlux_v8Accentueight.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/BEN_Merge_V8UV4.safetensors            
-RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/clip/ViT-L-14-GmP-SAE-FULL-model.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/ViT-L-14-GmP-SAE-FULL-model.safetensors 
-RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/clip/t5xxl_fp8_e4m3fn_scaled.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/t5xxl_fp8_e4m3fn_scaled.safetensors 
-RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/vae/ae.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/ae.safetensors 
+RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/unet/jibMixFlux_v8Accentueight.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/BEN_Merge_V8UV4.safetensors
+RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/clip/ViT-L-14-GmP-SAE-FULL-model.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/ViT-L-14-GmP-SAE-FULL-model.safetensors
+RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/clip/t5xxl_fp8_e4m3fn_scaled.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/t5xxl_fp8_e4m3fn_scaled.safetensors
+RUN wget --header="Authorization: Bearer ${HUGGINGFACE_ACCESS_TOKEN}" -O models/vae/ae.safetensors https://huggingface.co/Jehex/Jibv8/resolve/main/ae.safetensors
 
 # Lora's
 
