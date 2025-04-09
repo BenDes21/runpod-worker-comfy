@@ -3,7 +3,7 @@ FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04 as base
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 # Prevents prompts from packages asking for user input during installation
 ENV DEBIAN_FRONTEND=noninteractive
 # Prefer binary wheels over source distributions for faster pip installations
