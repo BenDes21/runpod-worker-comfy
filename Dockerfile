@@ -54,20 +54,6 @@ ADD *snapshot*.json /
 # Restore the snapshot to install custom nodes
 RUN /restore_snapshot.sh
 
-# Install again custom nodes
-
-RUN comfy node install controlaltai-nodes \
-    comfyui-post-processing-nodes \
-    teacache \
-    comfyui_essentials \
-    comfyui-detail-daemon
-
-RUN comfy node enable controlaltai-nodes
-RUN comfy node enable comfyui-post-processing-nodes
-RUN comfy node enable teacache
-RUN comfy node enable comfyui_essentials
-RUN comfy node enable comfyui-detail-daemon
-
 # Start container
 CMD ["/start.sh"]
 
